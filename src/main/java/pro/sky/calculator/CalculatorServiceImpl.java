@@ -27,9 +27,10 @@ public class CalculatorServiceImpl implements CalculatorService{
 
     @Override
     public String getCalculateDivision(int number1, int number2) {
-        if (number2 != 0) {
-            int value = number1 / number2;
-            return number1 + " / " + number2 + " = " + value;
-        } else return "Деление на ноль недопустимо";
+        if (number2 == 0) {
+            return "Деление на ноль недопустимо";
+        }
+        int value = number1 / number2;
+        return number1 + " / " + number2 + " = " + value;
     }
 }
